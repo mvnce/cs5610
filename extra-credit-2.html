@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=utf-8>
+    <title>Extra Credit Lab 2 - Siyan Ma</title>
+    <style>
+        .square-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .square {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            margin: 0 10px 0 10px;
+        }
+
+        .square:hover {
+            background-color: blue;
+            transition: 500ms;
+        }
+
+        @media(min-width: 600px) {
+            .square {
+                border: 1px;
+                border-style: solid;
+                border-color: purple;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="square-container">
+        <div class="square">
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliqua. Facilisis magna etiam tempor orci eu lobortis elementum nibh tellus. Euismod lacinia at
+                quis risus
+                sed vulputate. </p>
+        </div>
+        <div class="square">
+            <p> Semper auctor neque vitae tempus quam. Velit ut tortor pretium viverra suspendisse potenti. Suscipit
+                adipiscing
+                bibendum est ultricies integer quis auctor elit sed. Nisi porta lorem mollis aliquam ut porttitor leo a.
+                Cursus
+                mattis molestie a iaculis at erat. </p>
+        </div>
+        <div class="square">
+            <p> Viverra mauris in aliquam sem fringilla. Laoreet suspendisse interdum consectetur libero id faucibus
+                nisl
+                tincidunt eget. Pharetra massa massa ultricies mi quis. Aliquam nulla facilisi cras fermentum odio.
+                Adipiscing
+                vitae proin sagittis nisl rhoncus mattis rhoncus.</p>
+        </div>
+    </div>
+</body>
+
+</html>

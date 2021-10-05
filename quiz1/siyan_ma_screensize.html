@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=utf-8>
+    <title>Quiz 1 - screensize</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image {
+            height: 250px;
+            width: 250px;
+        }
+
+        @media (min-width: 0px) and (max-width: 720px) {
+            .coconut {
+                display: block;
+            }
+
+            .watermelon {
+                display: none;
+            }
+
+            .cone {
+                display: none;
+            }
+        }
+
+        @media (min-width: 721px) and (max-width: 1000px) {
+            .coconut {
+                display: none;
+            }
+
+            .watermelon {
+                display: block;
+            }
+
+            .cone {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1001px) {
+            .coconut {
+                display: none;
+            }
+
+            .watermelon {
+                display: none;
+            }
+
+            .cone {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="image coconut" src="https://image.shutterstock.com/shutterstock/photos/393850891/display_1500/stock-photo-coconut-with-half-and-leaves-on-white-background-393850891.jpg" />
+        <img class="image watermelon" src="https://image.shutterstock.com/shutterstock/photos/1422071948/display_1500/stock-photo-whole-and-half-watermelon-isolated-on-white-background-1422071948.jpg" />
+        <img class="image cone" src="https://image.shutterstock.com/shutterstock/photos/201425834/display_1500/stock-photo-chocolate-vanilla-and-strawberry-ice-cream-in-the-cone-on-white-background-with-clipping-path-201425834.jpg" />
+    </div>
+</body>
+
+</html>
