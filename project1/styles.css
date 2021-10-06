@@ -1,112 +1,222 @@
-@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;700&display=swap");
 
 body {
-    font-family: 'Mukta', sans-serif;
+  font-family: "Mukta", sans-serif;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
 }
 
 .header-container {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    right: 0;
-    top: 0;
-    color: black;
-    border: 1px solid #cccbcb;
-    background-color: #e4e4e4;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    list-style: none;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  color: black;
+  border: 1px solid #cccbcb;
+  background-color: #e4e4e4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
 }
 
 .header-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    list-style: none;
-    padding: 0 15px;
-    margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  padding: 0 15px;
+  margin: 0;
 }
 
 .header-left {
-    justify-content: flex-start;
-    font-weight: bold;
+  justify-content: flex-start;
+  font-weight: bold;
 }
 
 .header-right {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .header-text {
-    font-size: 15px;
-    padding: 14px 16px;
-    margin: 0 5px;
-    transition: 0.5s;
+  font-size: 15px;
+  padding: 14px 16px;
+  margin: 0 5px;
+  transition: 0.5s;
 }
 
 .header-item a,
 .header-item a:visited {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .header-selected {
-    background-color: #262626;
-    color: white;
-    border-radius: 5px;
-    padding: 2px 10px;
+  background-color: #262626;
+  color: white;
+  border-radius: 5px;
+  padding: 2px 10px;
 }
 
 .header-unselected {
-    background-color: #e4e4e4;
-    color: black;
-    border-radius: 5px;
-    padding: 2px 10px;
+  background-color: #e4e4e4;
+  color: black;
+  border-radius: 5px;
+  padding: 2px 10px;
 }
 
 .header-unselected:hover {
-    background-color: #262626;
-    color: white;
+  background-color: #262626;
+  color: white;
 }
 
 .main-wrapper {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .main-container {
-    margin: 65px 5px 10px 5px;
-    padding: 0 30px;
-    background-color: #e4e4e4;
-    border-radius: 5px;
-    max-width: 1000px;
+  margin: 65px 5px 10px 5px;
+  padding: 0 30px;
+  background-color: #e4e4e4;
+  border-radius: 5px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .main-container {
+    max-width: 320px;
+    min-width: 320px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .main-container {
+    max-width: 481px;
+    min-width: 481px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-container {
+    max-width: 769px;
+    min-width: 769px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .main-container {
+    max-width: 800px;
+    min-width: 800px;
+  }
 }
 
 .header-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.header-title h1, .header-title h2 {
-    margin: 10px 0;
+.header-title h1,
+.header-title h2 {
+  margin: 10px 0;
 }
 
 .section-container p {
-    margin: 0;
+  margin: 0;
 }
 
 .section-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .section-name {
-    font-size: 1.1em;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.section-position, .section-date {
-    font-style: italic;
+.section-position,
+.section-date {
+  font-style: italic;
+}
+
+.grid-first {
+  grid-area: first;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-second {
+  grid-area: second;
+}
+
+.grid-third {
+  grid-area: third;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-fourth {
+  grid-area: fourth;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "first"
+    "second"
+    "third"
+    "fourth";
+  grid-gap: 20px;
+  grid-template-rows: 25% 25% 25% 25%;
+}
+
+.grid-item {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.grid-container .image-item {
+  width: 50px;
+  height: 50px;
+}
+
+.grid-container .text-item {
+  color: black;
+  margin-left: 15px;
+  font-size: 20px;
+  transition: 0.5s;
+  border-radius: 5px;
+  border: 2px solid black;
+  padding: 5px 10px;
+  width: 250px;
+  text-align: center;
+}
+
+.grid-container a,
+.grid-container a:visited {
+  text-decoration: none;
+}
+
+.grid-container .text-item:hover {
+  background-color: #262626;
+  color: white;
 }
