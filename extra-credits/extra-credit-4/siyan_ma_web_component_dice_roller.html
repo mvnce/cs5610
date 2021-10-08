@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lecture 4, Let's Go Scripting</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .center-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center-screen">
+        <dice-roller></dice-roller>
+    </div>
+    <script>
+        const diceRollerTemplate = document.createElement('inner-dice-roller');
+        diceRollerTemplate.innerHTML = `
+            <div id="number-display">1</div>
+            <button id="roll-btn"> Roll </button>
+            `;
+
+        class DiceRoller extends HTMLElement {
+
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+                this.shadowRoot.appendChild(diceRollerTemplate.cloneNode(true));
+            }
+
+            randomNumber(lowerBound, upperBound) {
+                const range = upperBound - lowerBound + 1;
+                return Math.floor(Math.random() * range) + lowerBound;
+            }
+
+            updateComponent() {
+                console.log('update component...');
+                this.shadowRoot.querySelector('#number-display').innerHTML = this.randomNumber(1, 6);
+            }
+
+            connectedCallback() {
+                this.shadowRoot.querySelector('#roll-btn')
+                    .addEventListener('click', () => this.updateComponent());
+            }
+        }
+
+        window.customElements.define('dice-roller', DiceRoller);
+
+    </script>
+</body>
+
+</html>
