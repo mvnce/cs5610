@@ -1,4 +1,4 @@
-// PUT YOUR NAME HERE
+// Siyan Ma
 // PROBLEM 1 - findBiggestNumber
 
 /*
@@ -13,9 +13,17 @@
 
 */
 function findBiggestNumber(map) {
-  /*
-      Insert code here!
-  */
+  if (map == null || map.length === 0 || map[0].length === 0)
+    return undefined;
+
+  let biggestNumber = map[0][0];
+
+  for (let row of map) {
+    const sanitizedRow = row.filter(element => typeof element === 'number');
+    biggestNumber = Math.max(...sanitizedRow, biggestNumber);
+  }
+
+  return biggestNumber;
 }
 
 // PROBLEM 2 - balancedString
@@ -35,9 +43,28 @@ output
 */
 
 function balancedString(str) {
-  /*
-      Insert code here!
-  */
+  if (str == null) {
+    return false;
+  }
+
+  if (str.length === 0) {
+    return true;
+  }
+
+  const countMap = {};
+
+  for (let i = 0; i < str.length; i++) {
+    const letter = str.charAt(i);
+
+    if (countMap[letter] == null) {
+      countMap[letter] = 0;
+    }
+    countMap[letter]++;
+  }
+
+  const counts = Object.values(countMap);
+
+  return !!counts.reduce((prev, curr) => prev === curr ? prev : false);
 }
 
 // PROBLEM 3 - additivePersistence
@@ -54,9 +81,24 @@ output
   an integer as described above
 */
 function additivePersistence(num) {
-  /*
-      Insert code here!
-  */
+  const DECIMAL = 10;
+  const sumDigits = (number) => {
+    let total = 0;
+    while (number > 0) {
+      total += number % DECIMAL;
+      number = Math.floor(number / DECIMAL);
+    }
+    return total;
+  };
+
+  let count = 0;
+
+  while (num >= DECIMAL) {
+    num = sumDigits(num);
+    count++;
+  }
+
+  return count;
 }
 
 
@@ -90,7 +132,7 @@ const grid5 = [
   [],
 ]
 
-console.assert(findBiggestNumber(grid1) === 12, "biggest number should be 12"); 
+console.assert(findBiggestNumber(grid1) === 12, "biggest number should be 12");
 console.assert(findBiggestNumber(grid2) === 6, "biggest number should be 6");
 console.assert(findBiggestNumber(grid3) === 2, "biggest number should be 2");
 console.assert(findBiggestNumber(grid4) === 0, "biggest number should be 0");
@@ -111,7 +153,7 @@ console.assert(balancedString("") === true, "'' is balanced")
 
 // TEST 3 - additivePersistence
 console.assert(additivePersistence(1234) === 2, 'the additive 1234 should be 2')
-console.assert(additivePersistence(13) === 1, 'the additive 13 should be 1') 
+console.assert(additivePersistence(13) === 1, 'the additive 13 should be 1')
 console.assert(additivePersistence(9876) === 2, 'the additive 9876 should be 2')
 console.assert(additivePersistence(199) === 3, 'the additive 199 should be 3')
 console.assert(additivePersistence(1679583) === 3, 'the additive 1679583 should be 3')
